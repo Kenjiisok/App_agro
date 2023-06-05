@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Alert} from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
-import { Feather, Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import {BASE_URL} from '@env'
 import axios from 'axios';
 
@@ -110,19 +110,6 @@ export const App = () => {
 
         </View>
 
-
-        <View style={[styles.inputView, isFocus && { borderColor: '#228B22'} ]}>
-          <Ionicons 
-            marginRight={5}
-            name="leaf-outline" 
-            size={24} 
-            color="black" />
-          <TextInput
-            style={styles.input}
-            placeholder='Digite o que irá plantar'
-            placeholderTextColor='#000'
-          />
-        </View>
 
         <Dropdown
           style={[styles.dropdown, isFocus && { borderColor: '#228B22' }]}
@@ -239,7 +226,7 @@ export const App = () => {
         <TouchableOpacity 
         style={styles.press} 
         onPress={() => {
-        if(!estadoNome || !cidadeNome || !estacaoNome || !userName) {
+        if(!estadoNome || !cidadeNome || !estacaoNome || !userName || !metros) {
           Alert.alert("Por favor, preencha todos os campos.");
         } else {
           Alert.alert(`Estado: ${estadoNome}\nCidade: ${cidadeNome}
